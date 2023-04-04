@@ -22,6 +22,7 @@ checkboxes.forEach(function(checkbox) {
     }
   });
 });
+
 // get table rows
 const rows = document.querySelectorAll('#rooms tr');
 
@@ -48,3 +49,13 @@ rows.forEach(row => {
   }
 });
 
+const calculateBtn = document.querySelector('#calculate-rooms');
+calculateBtn.addEventListener('click', () => {
+  let totalArea = 0;
+  const areaInputs = document.querySelectorAll('#rooms [name=area]');
+  areaInputs.forEach(areaInput => {
+    totalArea += Number(areaInput.value);
+  });
+  const totalAreaSpan = document.querySelector('#total-area');
+  totalAreaSpan.textContent = totalArea.toFixed(2);
+});
