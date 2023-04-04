@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <img src="./images/keja.png" alt="Logo" width="50" height="50">
+            SHAMBA CALCULATOR
+            <span>
+                <a href="#about">About Project</a>
+                <a href="#calculator">Calculator</a>
+                <a href="#listings">Listings </a>
+                <a href="#contact">Contact </a>
+            </span>
+
+
+        </a>
+    </div>
+</nav>
+<section class="about-section" id="#about">
+
+    This calculator can be used to: <br>
+    <ol>
+        <li>Add land dimensions in Acres</li>
+        <li>Enter dimensions for multiple rooms in length and width</li>
+        <li>Calculate the size of the house based on the added area of the rooms</li>
+        <li>Calculate the space left on the land after the area of the house is calculated</li>
+    </ol>
+    <br> Feel free to do some Math! <br>
+
+    <p class="button-paragraph">
+        <!-- js event listener -->
+        <button id="myBtn">Dear Future Home Owner!</button>
+    </p>
+</section>
+
+<body id="body">
+    <h1>Property Calculator</h1>
+    <form>
+        <h2><img src="./images/surveyor.png" alt="Logo" width="50" height="50">Select Land Sizes </h2>
+        <label>
+            <input type="checkbox" name="land_size" value="0.125" />
+            1/8 Acre
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="0.25" />
+            1/4 Acre
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="0.5" />
+            1/2 Acre
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="1" />
+            1 Acre
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="1.25" />
+            1.25 Acres
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="1.5" />
+            1.5 Acres
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="1.75" />
+            1.75 Acres
+        </label>
+        <label>
+            <input type="checkbox" name="land_size" value="2" />
+            2 Acres
+        </label>
+
+        <h2><img src="./images/architecture.png" alt="Logo" width="50" height="50">Room Sizes</h2>
+        <div id="rooms-list">
+            <div>
+                <br>
+                <table id="rooms">
+                    <tr>
+                        <th>Room</th>
+                        <th>Length</th>
+                        <th>Width</th>
+                        <th>Area</th>
+                        <th>Add Room</th>
+                        <th>Delete Room</th>
+                    </tr>
+                    <tr>
+                        <td>Sitting Room</td>
+                        <td><input type="number" name="length" /></td>
+                        <td><input type="number" name="width" /></td>
+                        <td> <input type="number" id="room-size" name="area" readonly></td>
+                        <td><button type="button" id="add-room">+</button></td>
+                        <td><button type="button" class="delete-room">-</button></td>
+                    </tr>
+                    <tr>
+                        <td>Kitchen</td>
+                        <td><input type="number" name="length" /></td>
+                        <td><input type="number" name="width" /></td>
+                        <td> <input type="number" id="room-size" name="area" readonly></td>
+                        <td><button type="button" id="add-room">+</button></td>
+                        <td><button type="button" class="delete-room">-</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>Bedroom</td>
+                        <td><input type="number" name="length" /></td>
+                        <td><input type="number" name="width" /></td>
+                        <td> <input type="number" id="room-size" name="area" readonly></td>
+                        <td><button type="button" id="add-room">+</button></td>
+                        <td><button type="button" class="delete-room">-</button></td>
+                    </tr>
+                    <tr>
+                        <td>Full Bathroom</td>
+                        <td><input type="number" name="length" /></td>
+                        <td><input type="number" name="width" /></td>
+                        <td> <input type="number" id="room-size" name="area" readonly></td>
+                        <td><button type="button" id="add-room">+</button></td>
+                        <td><button type="button" class="delete-room">-</button></td>
+                    </tr>
+                </table>
+            </div>
+            <br><br>
+
+        </div>
+
+
+        <h2><img src="./images/calculator.png" alt="Logo" width="50" height="50">Results</h2>
+        <button type="button" id="calculate-rooms" class="button">Calculate Room Area</button>
+        <p>Total Room Area: <span id="total-area">0</span> square meters</p>
+        <button type="button" id="calculate-land" class="button">Calculate Land Space Left</button>
+        <p>Land Space Left: <span id="land-space-left">0</span> square meters</p>
+
+        <h2> <img src="./images/land.png" alt="Logo" width="50" height="50">
+            Available Land Locations</h2>
+        <ul id="available-locations"></ul>
+    </form>
+    <div id="footer">
+        <p>
+            <span>Tom © 2023</span>
+            <a href="https://twitter.com/space" rel="noopener" target="_blank" class="social">TWITTER</a>
+            <a href="https://www.youtube.com/space" rel="noopener" target="_blank" class="social">YOUTUBE</a>
+            <a href="https://www.instagram.com/space/" rel="noopener" target="_blank" class="social">INSTAGRAM</a>
+            <a href="https://www.flickr.com/photos/space" rel="noopener" target="_blank" class="social">FLICKR</a>
+            <a href="https://www.linkedin.com/company/space" rel="noopener" target="_blank" class="social">LINKEDIN</a>
+
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
