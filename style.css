@@ -109,6 +109,18 @@ body{
   #myBtn:-webkit-details-marker {
     display: none;
   }
+  /* table style */
+  #rooms-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  #rooms-list table {
+    text-align: center;
+  }
+  
 /* CSS */
 .button {
   appearance: none;
@@ -172,7 +184,7 @@ body{
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: ;
+  background-color: #EEEEEE ;
   color: black;
   text-align: center;
 }
