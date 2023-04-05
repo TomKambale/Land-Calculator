@@ -122,3 +122,8 @@ calculateBtn.addEventListener("click", () => {
       selectedValue = Number(landSizeInput.value);
     }
   });
+  
+  // Calculate the land space left
+  const totalAreaSpan = document.querySelector("#total-area");
+  const totalArea = Number(totalAreaSpan.textContent);
+  const landSpaceLeft = selectedValue - totalArea;
