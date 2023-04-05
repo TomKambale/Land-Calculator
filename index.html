@@ -44,39 +44,45 @@
 <body id="body">
     <h1>Property Calculator</h1>
     <form>
-        <h2><img src="./images/surveyor.png" alt="Logo" width="50" height="50">Select Land Sizes </h2>
+        <div id="list"></div>
+        <div id="sizes">
+            <h2><img src="./images/surveyor.png" alt="Logo" width="50" height="50">Select Land Sizes </h2>
         <label>
-            <input type="checkbox" name="land_size" value="0.125" />
+            <input type="checkbox" name="land_size" value="505.8575" />
             1/8 Acre
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="0.25" />
+            <input type="checkbox" name="land_size" value="1011.715" />
             1/4 Acre
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="0.5" />
+            <input type="checkbox" name="land_size" value="2023.43" />
             1/2 Acre
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="1" />
+            <input type="checkbox" name="land_size" value="4046.86" />
             1 Acre
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="1.25" />
+            <input type="checkbox" name="land_size" value="5068.57" />
             1.25 Acres
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="1.5" />
+            <input type="checkbox" name="land_size" value="6072.87" />
             1.5 Acres
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="1.75" />
+            <input type="checkbox" name="land_size" value="7077.165" />
             1.75 Acres
         </label>
         <label>
-            <input type="checkbox" name="land_size" value="2" />
+            <input type="checkbox" name="land_size" value="8093.72" />
             2 Acres
         </label>
+        </div>
+        <h2> <img src="./images/land.png" alt="Logo" width="50" height="50">
+            Available Land Locations</h2>
+        <ul id="available-locations"></ul>
 
         <h2><img src="./images/architecture.png" alt="Logo" width="50" height="50">Room Sizes</h2>
         <div id="rooms-list">
@@ -137,9 +143,7 @@
         <button type="button" id="calculate-land" class="button">Calculate Land Space Left</button>
         <p>Land Space Left: <span id="land-space-left">0</span> square meters</p>
 
-        <h2> <img src="./images/land.png" alt="Logo" width="50" height="50">
-            Available Land Locations</h2>
-        <ul id="available-locations"></ul>
+        
     </form>
     <div id="footer">
         <p>

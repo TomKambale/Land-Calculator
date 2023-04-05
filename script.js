@@ -1,61 +1,102 @@
-var x = document.getElementById("myBtn");
-x.addEventListener("click", myFunction);
-x.addEventListener("click", someOtherFunction);
+const myButton = document.getElementById("myBtn");
 
-function myFunction() {
-  alert ("Congratulations on making your first home ownership step.");
-}
+const myFunction = () => {
+  alert("Congratulation on making the first step towards home ownership");
+};
 
-function someOtherFunction() {
-  alert ("Conduct due diligence before making any transactions!");
-}
+const someOtherFunction = () => {
+  alert("Conduct due!");
+};
+
+myButton.addEventListener("click", myFunction);
+myButton.addEventListener("click", someOtherFunction);
+// Get all the checkboxes and add a click event listener to each of them
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-checkboxes.forEach(function(checkbox) {
-  checkbox.addEventListener('click', function() {
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("click", function () {
+    // If the current checkbox is checked, uncheck all other checkboxes
     if (this.checked) {
-      checkboxes.forEach(function(otherCheckbox) {
+      checkboxes.forEach(function (otherCheckbox) {
         if (otherCheckbox !== checkbox) {
           otherCheckbox.checked = false;
         }
       });
+      // Get the value of the selected checkbox
+      const selectedSize = checkbox.value;
+      // Use fetch to retrieve data from db.json for the selected checkbox value
+      fetch(`http://localhost:3000/land-sizes?size=${selectedSize}`, {
+        method: "GET",
+      })
+        // parse the response data as JSON
+        .then((response) => response.json())
+        // once the data is parsed, do something with it
+        .then((data) => {
+          // select the <ul> element where we will display the data
+         
+            const availableLocations = document.querySelector(
+              "#available-locations"
+            );
+            // clear any previously displayed data from the <ul> element
+
+            availableLocations.innerHTML = data.eigth.location;
+          
+
+          // loop over each property in the data object
+          data.forEach((property) => {
+            // create a new <li> element to display the property data
+            const listItem = document.createElement("li");
+            // set the text content of the <li> element to include the property location and land size
+            listItem.textContent = `${property.location} (${property.size} acres)`;
+            // add the <li> element to the <ul> element for display
+            availableLocations.appendChild(listItem);
+          });
+        })
+        // if an error occurs during the fetch or data processing, log it to the console
+        .catch((error) => console.log(error));
     }
   });
 });
 
-// get table rows
-const rows = document.querySelectorAll('#rooms tr');
+// Get all the rows of the table
+const rows = document.querySelectorAll("#rooms tr");
 
-// add click event listener to Add Room buttons
-rows.forEach(row => {
-  const addBtn = row.querySelector('#add-room');
+// Add click event listeners to the Add Room and Delete Room buttons in each row
+rows.forEach((row) => {
+  // Add Room button
+  const addBtn = row.querySelector("#add-room");
   if (addBtn) {
-    addBtn.addEventListener('click', () => {
-      const length = row.querySelector('[name=length]').value;
-      const width = row.querySelector('[name=width]').value;
+    addBtn.addEventListener("click", () => {
+      // Calculate the area of the room and display it in the appropriate input field
+      const length = row.querySelector("[name=length]").value;
+      const width = row.querySelector("[name=width]").value;
       const area = length * width;
-      const areaInput = row.querySelector('[name=area]');
+      const areaInput = row.querySelector("[name=area]");
       areaInput.value = area;
     });
   }
-  
-  const deleteBtn = row.querySelector('.delete-room');
+
+  // Delete Room button
+  const deleteBtn = row.querySelector(".delete-room");
   if (deleteBtn) {
-    deleteBtn.addEventListener('click', () => {
-      row.querySelector('[name=length]').value = '';
-      row.querySelector('[name=width]').value = '';
-      row.querySelector('[name=area]').value = '';
+    deleteBtn.addEventListener("click", () => {
+      // Clear the input fields for the length, width, and area of the room
+      row.querySelector("[name=length]").value = "";
+      row.querySelector("[name=width]").value = "";
+      row.querySelector("[name=area]").value = "";
     });
   }
 });
 
-const calculateBtn = document.querySelector('#calculate-rooms');
-calculateBtn.addEventListener('click', () => {
+// Add a click event listener to the Calculate Rooms button
+const calculateBtn = document.querySelector("#calculate-rooms");
+calculateBtn.addEventListener("click", () => {
+  // Calculate the total area of all the rooms and display it to the user
   let totalArea = 0;
-  const areaInputs = document.querySelectorAll('#rooms [name=area]');
-  areaInputs.forEach(areaInput => {
+  const areaInputs = document.querySelectorAll("#rooms [name=area]");
+  areaInputs.forEach((areaInput) => {
     totalArea += Number(areaInput.value);
   });
-  const totalAreaSpan = document.querySelector('#total-area');
-  totalAreaSpan.textContent = totalArea.toFixed(2);
+  const totalAreaSpan = document.querySelector("#total-area");
+  totalAreaSpan.textContent = totalArea.toFixed(0);
 });
+

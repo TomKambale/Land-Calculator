@@ -1,87 +1,70 @@
+
 {
-    "land_sizes": {
-      "0.125": [
-        {
-          "id": "prop1",
-          "area_acres": 0.125,
-          "area_sqm": 505.8575,
-          "location": "Kayole"
-        },
-        {
-          "id": "prop2",
-          "area_acres": 0.125,
-          "area_sqm": 505.8575,
-          "location": "Kasarani"
-        }
-      ],
-      "0.25": [
-        {
-          "id": "prop3",
-          "area_acres": 0.25,
-          "area_sqm": 1011.715,
-          "location": "Kiambu"
-        }
-      ],
-      "0.5": [
-        {
-          "id": "prop4",
-          "area_acres": 0.5,
-          "area_sqm": 2023.43,
-          "location": "Chepkanga"
-        },
-        {
-          "id": "prop5",
-          "area_acres": 0.5,
-          "area_sqm": 2023.43,
-          "location": "Kamulu"
-        }
-      ],
-      "1": [
-        {
-          "id": "prop6",
-          "area_acres": 1,
-          "area_sqm": 4046.86,
-          "location": "Kajiado"
-        }
-      ],
-      "1.25": [
-        {
-          "id": "prop7",
-          "area_acres": 1.25,
-          "area_sqm": 5068.575,
-          "location": "Nanyuki"
-        }
-      ],
-      "1.5": [
-        {
-          "id": "prop8",
-          "area_acres": 1.5,
-          "area_sqm": 6072.87,
-          "location": "Nakuru"
-        }
-      ],
-      "1.75": [
-        {
-          "id": "prop9",
-          "area_acres": 1.75,
-          "area_sqm": 7077.165,
-          "location": "Mtwapa"
-        }
-      ],
-      "2": [
-        {
-          "id": "prop10",
-          "area_acres": 2,
-          "area_sqm": 8093.72,
-          "location": "Samburu"
-        },
-        {
-          "id": "prop11",
-          "area_acres": 2,
-          "area_sqm": 8093.72,
-          "location": "Kilifi"
-        }
-      ]
-    }
-  }
+  "land-sizes":[
+    {
+        "id": "prop2",
+        "size": "eighth",
+        "area_acres": 0.125,
+        "area_sqm": 505.8575,
+        "location": "Kasarani"
+      },
+     {
+        "id": "prop3",
+        "size": "quarter",
+        "area_acres": 0.25,
+        "area_sqm": 1011.715,
+        "location": "Kiambu"
+      },
+      {
+        "id": "prop4",
+        "size": "half",
+        "area_acres": 0.5,
+        "area_sqm": 2023.43,
+        "location": "Chepkanga"
+      },
+      {
+        "id": "prop6",
+        "size":  "full",
+        "area_acres": 1,
+        "area_sqm": 4046.86,
+        "location": "Kajiado"
+      },
+      {
+        "id": "prop9",
+        "size": "one-quarters",
+        "area_acres": 1.25,
+        "area_sqm": 5068.57,
+        "location": "Kilifi"
+      },
+      {
+        "id": "prop8",
+        "size":"point-five",
+        "area_acres": 1.5,
+        "area_sqm": 6072.87,
+        "location": "Nakuru"
+      },
+      {
+        "id": "prop9",
+        "size": "three-quarters",
+        "area_acres": 1.75,
+        "area_sqm": 7077.165,
+        "location": "Mtwapa"
+      },
+      {
+        "id": "prop10",
+        "size": "two-full",
+        "area_acres": 2,
+        "area_sqm": 8093.72,
+        "location": "Samburu"
+      }
+
+  ]
   
+
+  }
+   
+    
+      
+   
+     
+   
