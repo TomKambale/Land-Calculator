@@ -100,3 +100,14 @@ calculateBtn.addEventListener("click", () => {
   totalAreaSpan.textContent = totalArea.toFixed(0);
 });
 
+// Define the checkbox values in an object
+const landSizes = {
+  "1/8 Acre": 505.8575,
+  "1/4 Acre": 1011.715,
+  "1/2 Acre": 2023.43,
+  "1 Acre": 4046.86,
+  "1.25 Acres": 5068.57,
+  "1.5 Acres": 6072.87,
+  "1.75 Acres": 7077.165,
+  "2 Acres": 8093.72
+};
