@@ -1,8 +1,9 @@
 body{
-    background-image: url(images/grant-durr-HlfDkieLXaM-unsplash.jpg);
+    background-image: url("https://images.unsplash.com/photo-1518655513281-e90740bd56b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=80");
     color: antiquewhite;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
 }
 /* Style the navbar */
 .navbar {
@@ -10,6 +11,8 @@ body{
     height: 80px; /* Set the height of the navbar */
     padding: 0 20px; /* Add some padding */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+    background-color: #959DA5;
+
   }
   
   /* Style the logo */
@@ -33,6 +36,7 @@ body{
     text-decoration: none; /* Remove underline */
     margin: 0 10px; /* Add some margin */
     transition: all 0.3s ease; /* Add a smooth transition */
+    
   }
   
   /* Hover effect for links */
@@ -161,4 +165,14 @@ body{
 
 .button:-webkit-details-marker {
   display: none;
+}
+
+#footer {
+  
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: ;
+  color: black;
+  text-align: center;
 }

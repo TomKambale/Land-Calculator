@@ -5,7 +5,7 @@ const myFunction = () => {
 };
 
 const someOtherFunction = () => {
-  alert("Conduct due!");
+  alert("Conduct due deligence before making any transactions!");
 };
 
 myButton.addEventListener("click", myFunction);
