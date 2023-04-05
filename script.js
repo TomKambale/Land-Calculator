@@ -111,3 +111,14 @@ const landSizes = {
   "1.75 Acres": 7077.165,
   "2 Acres": 8093.72
 };
+// Add a click event listener to the Calculate Land button
+const calculateLandBtn = document.querySelector("#calculate-land");
+calculateBtn.addEventListener("click", () => {
+  // Get the selected checkbox value
+  const landSizeInputs = document.querySelectorAll("[name=land_size]");
+  let selectedValue;
+  landSizeInputs.forEach((landSizeInput) => {
+    if (landSizeInput.checked) {
+      selectedValue = Number(landSizeInput.value);
+    }
+  });
