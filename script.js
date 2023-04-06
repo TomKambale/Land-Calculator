@@ -24,7 +24,7 @@ checkboxes.forEach(function (checkbox) {
       // Get the value of the selected checkbox
       const selectedSize = checkbox.value;
       // Use fetch to retrieve data from db.json for the selected checkbox value
-      fetch(`http://localhost:3000/land-sizes?size=${selectedSize}`, {
+      fetch(`https://land-calculator.onrender.com/land-sizes?size=${selectedSize}`, {
         method: "GET",
       })
         // parse the response data as JSON
@@ -145,7 +145,7 @@ landSizeSelect.addEventListener("change", event => {
   // Clear existing list items
   availableLocations.innerHTML = "";
 
-  fetch("http://localhost:3000/land-sizes")
+  fetch("https://land-calculator.onrender.com/land-sizes")
     .then(response => response.json())
     .then(data => {
       for (let location of data) {
