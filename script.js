@@ -132,3 +132,29 @@ calculateBtn.addEventListener("click", () => {
   const landSpaceLeftSpan = document.querySelector("#land-space-left");
   landSpaceLeftSpan.textContent = landSpaceLeft.toFixed(0);
 });
+
+let area_sqm = landSizes["1/4 Acre"];
+
+const availableLocations = document.getElementById("available-locations");
+
+const landSizeSelect = document.getElementById("land-size-select");
+landSizeSelect.addEventListener("change", event => {
+  const selectedSize = event.target.value;
+  area_sqm = landSizes[selectedSize];
+
+  // Clear existing list items
+  availableLocations.innerHTML = "";
+
+  fetch("http://localhost:3000/land-sizes")
+    .then(response => response.json())
+    .then(data => {
+      for (let location of data) {
+        if (location.area_sqm === area_sqm) {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${location.name} (${selectedSize})`;
+          availableLocations.appendChild(listItem);
+        }
+      }
+    })
+    .catch(error => console.error(error));
+});
